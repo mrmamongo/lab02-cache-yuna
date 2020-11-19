@@ -48,14 +48,13 @@ Experiment::Experiment(Order ord): order(ord) {
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
                         static_cast<double>\
-                    ((std::chrono::nanoseconds(end - start)).count())
-                );
+                    ((std::chrono::nanoseconds(end - start)).count()));
                 delete[] arr;
             }
         }
             break;
         case Order::Random: {
-            for (int64 experimentSize: experimentSizes) {
+            for ( int64 experimentSize : experimentSizes ) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
                 for (int64 j = 0; j < experimentSize; j += 4) {
@@ -78,8 +77,7 @@ Experiment::Experiment(Order ord): order(ord) {
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
                         static_cast<double>\
-                    ((std::chrono::nanoseconds(end - start)).count())
-                );
+                    ((std::chrono::nanoseconds(end - start)).count()));
                 delete[] arr;
             }
         }
@@ -97,9 +95,11 @@ std::ostream &operator<<(std::ostream & os, Experiment experiment) {
         << "\t  input_data:" << endl
         << "\t\tbuffer_size: \"";
         if (i == 0) {
-            os << experimentSizes[i]/(1024.0/16.0) << " KB\"" << endl;
+            os << experimentSizes[i]/(1024.0/16.0) << " KB\""
+                << endl;
         } else {
-                os << experimentSizes[i]/(1024.0*1024.0/16.0) << " MB\"" << endl;
+                os << experimentSizes[i]/(1024.0*1024.0/16.0)
+                    << " MB\"" << endl;
         }
         os <<
             "\t\tresults:\n\t\t experiment_duration: \""
@@ -125,7 +125,7 @@ Experiment::operator string() const {
 }
 
 std::ostream &operator<<(std::ostream & os, const Cache& cache) {
-    for (const auto& experiment: cache.experiments){
+    for (const auto& experiment : cache.experiments){
         os << experiment;
     }
     return os;
