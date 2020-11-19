@@ -5,58 +5,69 @@
 Experiment::Experiment(Order ord): order(ord) {
     switch (ord) {
         case Order::Straight: {
-            for (long experimentSize : experimentSizes) {
+            for (int64 experimentSize : experimentSizes) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
-                for (long int j = 0; j < experimentSize; j += 4) { // WARMING
+                for (int64 j = 0; j < experimentSize; j += 4) { // WARMING
                     arr[j] = random();
                 }
                 std::chrono::system_clock::time_point start =
                         std::chrono::high_resolution_clock::now();
-                for (long int j = 0; j < experimentSize * testCount; j += 4) { // EXPERIMENT
+                for (int64 j = 0;
+                     j < experimentSize * testCount;
+                     j += 4)
+                { // EXPERIMENT
                     k += arr[j % experimentSize];
                 }
                 std::chrono::system_clock::time_point end =
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
-                        static_cast<double>((std::chrono::nanoseconds(end - start)).count())
-                );
+                        static_cast<double>\
+                    ((std::chrono::nanoseconds(end - start)).count()));
                 delete[] arr;
             }
         }
             break;
         case Order::Back: {
-            for (long experimentSize : experimentSizes) {
+            for (int64 experimentSize : experimentSizes) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
-                for (long int j = 0; j < experimentSize; j += 4) { // WARMING
+                for (int64 j = 0; j < experimentSize; j += 4) { // WARMING
                     arr[j] = random();
                 }
                 std::chrono::system_clock::time_point start =
                         std::chrono::high_resolution_clock::now();
-                for (long int j = experimentSize * testCount; j > 0; j -= 4) { // EXPERIMENT
+                for (
+                    int64 j = experimentSize * testCount;
+                    j > 0;
+                    j -= 4)
+                { // EXPERIMENT
                     k += arr[j % experimentSize];
                 }
                 std::chrono::system_clock::time_point end =
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
-                        static_cast<double>((std::chrono::nanoseconds(end - start)).count())
+                        static_cast<double>\
+                    ((std::chrono::nanoseconds(end - start)).count())
                 );
                 delete[] arr;
             }
         }
             break;
         case Order::Random: {
-            for (long experimentSize: experimentSizes) {
+            for (int64 experimentSize: experimentSizes) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
-                for (long int j = 0; j < experimentSize; j += 4) {
+                for (int64 j = 0; j < experimentSize; j += 4) {
                     arr[j] = random();
                 }
                 std::set<int> used;
                 std::chrono::system_clock::time_point start =
                         std::chrono::high_resolution_clock::now();
-                for (long int i = 0, j; i < experimentSize * testCount; i += 4) {
+                for (int64 i = 0, j;
+                     i < experimentSize * testCount;
+                     i += 4)
+                {
                     j = random() % experimentSize;
                     while (used.find(j) != used.end()) {
                         break;
@@ -66,7 +77,8 @@ Experiment::Experiment(Order ord): order(ord) {
                 std::chrono::system_clock::time_point end =
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
-                        static_cast<double>((std::chrono::nanoseconds(end - start)).count())
+                        static_cast<double>\
+                    ((std::chrono::nanoseconds(end - start)).count())
                 );
                 delete[] arr;
             }
@@ -89,7 +101,9 @@ std::ostream &operator<<(std::ostream & os, Experiment experiment) {
         } else {
                 os << experimentSizes[i]/(1024.0*1024.0/16.0) << " MB\"" << endl;
         }
-        os << "\t\tresults:\n\t\t experiment_duration: \"" << experiment.time[i] << " ns\"\n";
+        os <<
+            "\t\tresults:\n\t\t experiment_duration: \""
+            << experiment.time[i] << " ns\"\n";
     }
     return os;
 }
