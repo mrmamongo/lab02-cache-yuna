@@ -14,7 +14,7 @@ using std::endl;
 using std::string;
 
 static const int testCount = 1000;
-static std::vector<int64> experimentSizes =
+static std::vector<int> experimentSizes =
 {12288, 65536, 131072, 262144, 524288, 884736};
 
 struct Experiment{
