@@ -5,15 +5,15 @@
 Experiment::Experiment(Order ord): order(ord) {
     switch (ord) {
         case Order::Straight: {
-            for (int64 experimentSize : experimentSizes) {
+            for (int experimentSize : experimentSizes) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
-                for (int64 j = 0; j < experimentSize; j += 4) { // WARMING
+                for (int j = 0; j < experimentSize; j += 4) { // WARMING
                     arr[j] = random();
                 }
                 std::chrono::system_clock::time_point start =
                         std::chrono::high_resolution_clock::now();
-                for (int64 j = 0;
+                for (int j = 0;
                      j < experimentSize * testCount;
                      j += 4)
                 { // EXPERIMENT
@@ -24,21 +24,21 @@ Experiment::Experiment(Order ord): order(ord) {
                 time.push_back(
                         static_cast<double>\
                     ((std::chrono::nanoseconds(end - start)).count()));
-                delete[] arr;
+                delete arr;
             }
         }
             break;
         case Order::Back: {
-            for (int64 experimentSize : experimentSizes) {
+            for (int experimentSize : experimentSizes) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
-                for (int64 j = 0; j < experimentSize; j += 4) { // WARMING
+                for (int j = 0; j < experimentSize; j += 4) { // WARMING
                     arr[j] = random();
                 }
                 std::chrono::system_clock::time_point start =
                         std::chrono::high_resolution_clock::now();
                 for (
-                    int64 j = experimentSize * testCount;
+                    int j = experimentSize * testCount;
                     j > 0;
                     j -= 4)
                 { // EXPERIMENT
@@ -49,21 +49,22 @@ Experiment::Experiment(Order ord): order(ord) {
                 time.push_back(
                         static_cast<double>\
                     ((std::chrono::nanoseconds(end - start)).count()));
-                delete[] arr;
+                delete arr;
             }
         }
             break;
         case Order::Random: {
-            for ( int64 experimentSize : experimentSizes ) {
+            for ( int experimentSize : experimentSizes ) {
                 long double k = 0;
                 auto arr = new long double[experimentSize];
-                for (int64 j = 0; j < experimentSize; j += 4) {
+                for (int j = 0; j < experimentSize; j += 4) {
                     arr[j] = random();
                 }
                 std::set<int> used;
                 std::chrono::system_clock::time_point start =
                         std::chrono::high_resolution_clock::now();
-                for (int64 i = 0, j;
+                int j = 0;
+                for (int i = 0;
                      i < experimentSize * testCount;
                      i += 4)
                 {
