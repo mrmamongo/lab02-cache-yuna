@@ -24,7 +24,7 @@ Experiment::Experiment(Order ord): order(ord) {
                 time.push_back(
                         static_cast<double>\
                     ((std::chrono::nanoseconds(end - start)).count()));
-                delete arr;
+                delete[] arr;
             }
         }
             break;
@@ -49,7 +49,7 @@ Experiment::Experiment(Order ord): order(ord) {
                 time.push_back(
                         static_cast<double>\
                     ((std::chrono::nanoseconds(end - start)).count()));
-                delete arr;
+                delete[] arr;
             }
         }
             break;
@@ -79,7 +79,7 @@ Experiment::Experiment(Order ord): order(ord) {
                 time.push_back(
                         static_cast<double>\
                     ((std::chrono::nanoseconds(end - start)).count()));
-                delete arr;
+                delete[] arr;
             }
         }
             break;
