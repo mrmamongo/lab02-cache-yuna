@@ -23,7 +23,7 @@ Experiment::Experiment(Order ord): order(ord) {
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
                         static_cast<double>\
-                    ((std::chrono::nanoseconds(end - start)).count()));
+                    ((std::chrono::nanoseconds(end - start)).count())/static_cast<double>(testCount));
                 delete[] arr;
             }
         }
@@ -48,7 +48,7 @@ Experiment::Experiment(Order ord): order(ord) {
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
                         static_cast<double>\
-                    ((std::chrono::nanoseconds(end - start)).count()));
+                    ((std::chrono::nanoseconds(end - start)).count())/static_cast<double>(testCount));
                 delete[] arr;
             }
         }
@@ -78,7 +78,7 @@ Experiment::Experiment(Order ord): order(ord) {
                         std::chrono::high_resolution_clock::now();
                 time.push_back(
                         static_cast<double>\
-                    ((std::chrono::nanoseconds(end - start)).count()));
+                    ((std::chrono::nanoseconds(end - start)).count())/static_cast<double>(testCount));
                 delete[] arr;
             }
         }
