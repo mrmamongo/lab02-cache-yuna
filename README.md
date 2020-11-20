@@ -5,9 +5,9 @@
 |--------|--------|
 | Travis |[![Build Status](https://travis-ci.com/mrmamongo/Lab02-cache-yuna.svg?branch=Travis)](https://travis-ci.com/github/mrmamongo/lab02-cache-yuna)|
 
-Таблица полученных значений и диаграмма:
+Таблица диаграмма полученных значений:
 
-![](Lab-02-cache.jpg)
+![](WvQfvlFuVsc.jpg)
 
 
 
