@@ -72,7 +72,6 @@ Experiment::Experiment(Order ord): order(ord) {
                 {
                     j = random() % experimentSize;
                     while (used.find(j) != used.end()) {
-                        break;
                     }
                     k += arr[j % experimentSize];
                 }
