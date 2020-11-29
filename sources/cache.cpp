@@ -11,13 +11,16 @@ auto generateArray(uint64_t size){
     return array;
 }
 
-Experiment::Experiment(Experiment::Order ord, const std::vector<double> &sizes) {
+Experiment::Experiment(
+    Experiment::Order ord, const std::vector<double> &sizes
+    ) {
     order = ord;
-    auto array= generateArray(static_cast<uint64_t>(1.5 * cacheSizes[2] * 1024 * 1024));
+    auto array =
+    generateArray(static_cast<uint64_t>
+    (1.5 * cacheSizes[2] * 1024 * 1024));
+    
     for (const auto& size : sizes) {
-
         switch (ord) {
-
             case Order::Straight:{
                 long double k = 0;
 
@@ -33,8 +36,7 @@ Experiment::Experiment(Experiment::Order ord, const std::vector<double> &sizes) 
                 auto end = std::chrono::high_resolution_clock::now();
 
                 time.push_back(
-                        std::chrono::nanoseconds(end - start).count()/1000
-                        );
+                        std::chrono::nanoseconds(end - start).count()/1000);
             }
                 break;
             case Order::Back: {
@@ -52,8 +54,7 @@ Experiment::Experiment(Experiment::Order ord, const std::vector<double> &sizes) 
                 auto end = std::chrono::high_resolution_clock::now();
 
                 time.push_back(
-                        std::chrono::nanoseconds(end - start).count()/1000
-                );
+                        std::chrono::nanoseconds(end - start).count()/1000);
             } break;
             case Order::Random: {
                 long double k = 0;
@@ -78,12 +79,10 @@ Experiment::Experiment(Experiment::Order ord, const std::vector<double> &sizes) 
                 auto end = std::chrono::high_resolution_clock::now();
 
                 time.push_back(
-                        std::chrono::nanoseconds(end - start).count()/1000
-                );
+                        std::chrono::nanoseconds(end - start).count()/1000);
             }
                 break;
         }
-
     }
     delete[] array;
 }
