@@ -18,7 +18,6 @@ Experiment::Experiment(
     auto array =
     generateArray(static_cast<uint64_t>
     (1.5 * cacheSizes[2] * 1024 * 1024));
-    
     for (const auto& size : sizes) {
         switch (ord) {
             case Order::Straight:{
