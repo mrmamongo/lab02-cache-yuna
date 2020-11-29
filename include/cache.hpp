@@ -5,6 +5,7 @@
 
 #include <chrono>
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <set>
 #include <string>
@@ -14,8 +15,8 @@ using std::endl;
 using std::string;
 
 static const int testCount = 1000;
-static std::vector<int> experimentSizes =
-{12288, 65536, 131072, 262144, 524288, 884736};
+static const std::vector<double> cacheSizes {0.375, 1.5, 9};
+
 
 struct Experiment{
     enum class Order{
@@ -26,23 +27,21 @@ struct Experiment{
     Order order;
 
     std::vector<double> time;
-    std::vector<double> wTime;
 
-    explicit Experiment(Order ord);
-    friend std::ostream& operator<<(std::ostream&, Experiment);
+    explicit Experiment(Order ord,const std::vector<double>& sizes);
     explicit operator string() const;
 };
 
 class Cache {
-    std::vector<Experiment> experiments = std::vector<Experiment>{
-            Experiment(Experiment::Order::Straight),
-            Experiment(Experiment::Order::Back),
-            Experiment(Experiment::Order::Random)
-    };
+
+    std::vector<double> experimentSizes;
+    std::vector<Experiment> experiments;
 public:
-    Cache() = default;
+    static std::vector<double> GenerateExperiments();
+    explicit Cache();
 
     friend std::ostream& operator<<(std::ostream&, const Cache&);
+    void print(std::ostream&, Experiment) const;
 };
 
 #endif // INCLUDE_CACHE_HPP_
