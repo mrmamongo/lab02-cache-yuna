@@ -170,101 +170,101 @@ investigation:
  travel_order: straight
   experiments:
   - experiment:
-	 number: 1
-	  input_data:
-		results:
-		 experiment_duration: "2.21062e+06 ns"
+     number: 1
+      input_data:
+        results:
+         experiment_duration: "2.33314e+06 ns"
   - experiment:
-	 number: 2
-	  input_data:
-		results:
-		 experiment_duration: "1.81012e+06 ns"
+     number: 2
+      input_data:
+        results:
+         experiment_duration: "1.55302e+06 ns"
   - experiment:
-	 number: 3
-	  input_data:
-		results:
-		 experiment_duration: "1.4901e+06 ns"
+     number: 3
+      input_data:
+        results:
+         experiment_duration: "1.24128e+06 ns"
   - experiment:
-	 number: 4
-	  input_data:
-		results:
-		 experiment_duration: "1.57223e+06 ns"
+     number: 4
+      input_data:
+        results:
+         experiment_duration: "1.24777e+06 ns"
   - experiment:
-	 number: 5
-	  input_data:
-		results:
-		 experiment_duration: "1.6037e+06 ns"
+     number: 5
+      input_data:
+        results:
+         experiment_duration: "1.26326e+06 ns"
   - experiment:
-	 number: 6
-	  input_data:
-		results:
-		 experiment_duration: "1.30854e+06 ns"
+     number: 6
+      input_data:
+        results:
+         experiment_duration: "1.54632e+06 ns"
 investigation:
  travel_order: back
   experiments:
   - experiment:
-	 number: 1
-	  input_data:
-		results:
-		 experiment_duration: "1.20297e+06 ns"
+     number: 1
+      input_data:
+        results:
+         experiment_duration: "1.26199e+06 ns"
   - experiment:
-	 number: 2
-	  input_data:
-		results:
-		 experiment_duration: "1.25503e+06 ns"
+     number: 2
+      input_data:
+        results:
+         experiment_duration: "1.57637e+06 ns"
   - experiment:
-	 number: 3
-	  input_data:
-		results:
-		 experiment_duration: "1.14398e+06 ns"
+     number: 3
+      input_data:
+        results:
+         experiment_duration: "1.28433e+06 ns"
   - experiment:
-	 number: 4
-	  input_data:
-		results:
-		 experiment_duration: "1.1244e+06 ns"
+     number: 4
+      input_data:
+        results:
+         experiment_duration: "1.27127e+06 ns"
   - experiment:
-	 number: 5
-	  input_data:
-		results:
-		 experiment_duration: "1.14643e+06 ns"
+     number: 5
+      input_data:
+        results:
+         experiment_duration: "1.34706e+06 ns"
   - experiment:
-	 number: 6
-	  input_data:
-		results:
-		 experiment_duration: "1.16102e+06 ns"
+     number: 6
+      input_data:
+        results:
+         experiment_duration: "1.38855e+06 ns"
 investigation:
  travel_order: random
   experiments:
   - experiment:
-	 number: 1
-	  input_data:
-		results:
-		 experiment_duration: "1.60264e+07 ns"
+     number: 1
+      input_data:
+        results:
+         experiment_duration: "1.71084e+07 ns"
   - experiment:
-	 number: 2
-	  input_data:
-		results:
-		 experiment_duration: "1.57186e+07 ns"
+     number: 2
+      input_data:
+        results:
+         experiment_duration: "1.65949e+07 ns"
   - experiment:
-	 number: 3
-	  input_data:
-		results:
-		 experiment_duration: "1.50043e+07 ns"
+     number: 3
+      input_data:
+        results:
+         experiment_duration: "1.57479e+07 ns"
   - experiment:
-	 number: 4
-	  input_data:
-		results:
-		 experiment_duration: "1.50982e+07 ns"
+     number: 4
+      input_data:
+        results:
+         experiment_duration: "1.764e+07 ns"
   - experiment:
-	 number: 5
-	  input_data:
-		results:
-		 experiment_duration: "1.50039e+07 ns"
+     number: 5
+      input_data:
+        results:
+         experiment_duration: "2.45916e+07 ns"
   - experiment:
-	 number: 6
-	  input_data:
-		results:
-		 experiment_duration: "1.53761e+07 ns"
+     number: 6
+      input_data:
+        results:
+         experiment_duration: "1.66863e+07 ns"
 
 Process finished with exit code 0
 
