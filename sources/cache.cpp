@@ -95,11 +95,11 @@ void Cache::print(std::ostream& os, Experiment experiment) const {
     << "  experiments:" << endl;
     for (size_t i = 0; i < experimentSizes.size(); ++i){
         os << "  - experiment:" << endl
-        << "\t number: " << i+1 << endl
-        << "\t  input_data:" << endl
+        << "     number: " << i+1 << endl
+        << "      input_data:" << endl
         //<< "\t\tbuffer_size: \""
         //<< experimentSizes[i]/(1024*1024) << " MB\"\n"
-        << "\t\tresults:\n\t\t experiment_duration: \""
+        << "        results:\n         experiment_duration: \""
         << experiment.time[i] << " ns\"\n";
     }
 }
