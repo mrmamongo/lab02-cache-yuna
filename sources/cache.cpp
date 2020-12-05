@@ -11,15 +11,14 @@ auto generateArray(uint64_t size){
     return array;
 }
 
-Experiment::Experiment(
-    Experiment::Order ord, const std::vector<double> &sizes
-    ) {
+Experiment::Experiment(Experiment::Order ord, const size_t& sizes) {
     order = ord;
-    auto array =
-    generateArray(static_cast<uint64_t>
-    (1.5 * cacheSizes[2] * 1024 * 1024));
-    for (const auto& size : sizes) {
+    auto array = generateArray(static_cast<uint64_t>(cacheSizes[0] * 1024 * 1024));
+    for (size_t j = 0; j < sizes; ++j) {
+        size_t size = cacheSizes[0] * 1024 * 1024;
+
         switch (ord) {
+
             case Order::Straight:{
                 long double k = 0;
 
@@ -35,7 +34,8 @@ Experiment::Experiment(
                 auto end = std::chrono::high_resolution_clock::now();
 
                 time.push_back(
-                        std::chrono::nanoseconds(end - start).count()/1000);
+                        static_cast<double>(std::chrono::nanoseconds(end - start).count())/1000
+                        );
             }
                 break;
             case Order::Back: {
@@ -53,7 +53,8 @@ Experiment::Experiment(
                 auto end = std::chrono::high_resolution_clock::now();
 
                 time.push_back(
-                        std::chrono::nanoseconds(end - start).count()/1000);
+                        static_cast<double>(std::chrono::nanoseconds(end - start).count())/1000
+                );
             } break;
             case Order::Random: {
                 long double k = 0;
@@ -65,23 +66,25 @@ Experiment::Experiment(
 
                 auto start = std::chrono::high_resolution_clock::now();
                 std::set<size_t> used;
-                size_t j;
+                size_t l;
                 for (size_t i = 0; i < size*testCount; i+=4) {
-                    j = random() % static_cast<uint64_t>(size);
+                    l = random() % static_cast<uint64_t>(size);
 
                     while (used.find(j) != used.end()) {
-                        j = random() % static_cast<uint64_t>(size);
+                        l = random() % static_cast<uint64_t>(size);
                     }
-                    k += array[j % static_cast<uint64_t>(size)];
+                    k += array[l % static_cast<uint64_t>(size)];
                 }
 
                 auto end = std::chrono::high_resolution_clock::now();
 
                 time.push_back(
-                        std::chrono::nanoseconds(end - start).count()/1000);
+                        static_cast<double>(std::chrono::nanoseconds(end - start).count())/1000
+                );
             }
                 break;
         }
+
     }
     delete[] array;
 }
@@ -132,9 +135,9 @@ Cache::Cache() {
     experimentSizes = GenerateExperiments();
 
     experiments = std::vector<Experiment>{
-            Experiment(Experiment::Order::Straight, experimentSizes),
-            Experiment(Experiment::Order::Back, experimentSizes),
-            Experiment(Experiment::Order::Random, experimentSizes)};
+            Experiment(Experiment::Order::Straight, experimentSizes.size()),
+            Experiment(Experiment::Order::Back, experimentSizes.size()),
+            Experiment(Experiment::Order::Random, experimentSizes.size())};
 }
 
 std::vector<double> Cache::GenerateExperiments() {

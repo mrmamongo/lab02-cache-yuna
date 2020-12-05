@@ -28,16 +28,17 @@ struct Experiment{
 
     std::vector<double> time;
 
-    explicit Experiment(Order ord, const std::vector<double>& sizes);
+    explicit Experiment(Order ord,const size_t& sizes);
     explicit operator string() const;
 };
 
 class Cache {
+
     std::vector<double> experimentSizes;
     std::vector<Experiment> experiments;
 public:
     static std::vector<double> GenerateExperiments();
-    Cache();
+    explicit Cache();
 
     friend std::ostream& operator<<(std::ostream&, const Cache&);
     void print(std::ostream&, Experiment) const;
