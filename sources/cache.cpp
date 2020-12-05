@@ -18,9 +18,7 @@ Experiment::Experiment(Experiment::Order ord, const size_t& sizes) {
             (cacheSizes[0] * 1024 * 1024));
     for (size_t j = 0; j < sizes; ++j) {
         size_t size = cacheSizes[0] * 1024 * 1024;
-
         switch (ord) {
-
             case Order::Straight:{
                 long double k = 0;
 
