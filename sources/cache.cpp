@@ -11,7 +11,7 @@ auto generateArray(uint64_t size){
     return array;
 }
 
-double straightExperiment (size_t size) {
+double straightExperiment(size_t size) {
     auto array =
             generateArray(static_cast<uint64_t>\
             (cacheSizes[0] * 1024 * 1024));
@@ -32,7 +32,7 @@ double straightExperiment (size_t size) {
     static_cast<double>\
     (std::chrono::nanoseconds(end - start).count())/1000;
 }
-double backExperiment (size_t size) {
+double backExperiment(size_t size) {
     auto array =
             generateArray(static_cast<uint64_t>\
             (cacheSizes[0] * 1024 * 1024));
@@ -53,7 +53,7 @@ double backExperiment (size_t size) {
     static_cast<double>\
     (std::chrono::nanoseconds(end - start).count())/1000;
 }
-double randomExperiment (size_t size) {
+double randomExperiment(size_t size) {
     auto array =
             generateArray(static_cast<uint64_t>\
             (cacheSizes[0] * 1024 * 1024));
