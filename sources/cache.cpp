@@ -11,81 +11,96 @@ auto generateArray(uint64_t size){
     return array;
 }
 
-Experiment::Experiment(Experiment::Order ord, const size_t& sizes) {
-    order = ord;
+double straightExperiment (size_t size) {
     auto array =
             generateArray(static_cast<uint64_t>\
             (cacheSizes[0] * 1024 * 1024));
+    long double k = 0;
+
+    for (size_t i = 0; i < size; ++i) { // WARMING
+        k += array[i];
+    }
+    k = 0;
+
+    auto start = std::chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < size * testCount; i+=4) { // EXPERIMENT
+        k += array[i % static_cast<uint64_t>(size)];
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    delete[] array;
+    return
+    static_cast<double>\
+    (std::chrono::nanoseconds(end - start).count())/1000;
+}
+double backExperiment (size_t size) {
+    auto array =
+            generateArray(static_cast<uint64_t>\
+            (cacheSizes[0] * 1024 * 1024));
+    long double k = 0;
+
+    for (size_t i = 0; i < size; ++i) { // WARMING
+        k += array[i];
+    }
+    k = 0;
+
+    auto start = std::chrono::high_resolution_clock::now();
+    for (size_t i = size * testCount; i > 0; i-=4) { // EXPERIMENT
+        k += array[i % static_cast<uint64_t>(size)];
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    delete[] array;
+    return
+    static_cast<double>\
+    (std::chrono::nanoseconds(end - start).count())/1000;
+}
+double randomExperiment (size_t size) {
+    auto array =
+            generateArray(static_cast<uint64_t>\
+            (cacheSizes[0] * 1024 * 1024));
+    long double k = 0;
+
+    for (size_t i = 0; i < size; ++i) { // WARMING
+        k += array[i];
+    }
+    k = 0;
+
+    auto start = std::chrono::high_resolution_clock::now();
+    std::set<size_t> used;
+    size_t l;
+    for (size_t i = 0; i < size*testCount; i+=4) {
+        l = random() % static_cast<uint64_t>(size);
+
+        while (used.find(l) != used.end()) {
+            l = random() % static_cast<uint64_t>(size);
+        }
+        k += array[l % static_cast<uint64_t>(size)];
+    }
+
+    auto end = std::chrono::high_resolution_clock::now();
+    delete[] array;
+    return
+    static_cast<double>\
+    (std::chrono::nanoseconds(end - start).count())/1000;
+}
+
+Experiment::Experiment(Experiment::Order ord, const size_t& sizes) {
+    order = ord;
     for (size_t j = 0; j < sizes; ++j) {
         size_t size = cacheSizes[0] * 1024 * 1024;
         switch (ord) {
             case Order::Straight:{
-                long double k = 0;
-
-                for (size_t i = 0; i < size; ++i) { // WARMING
-                    k += array[i];
-                }
-                k = 0;
-
-                auto start = std::chrono::high_resolution_clock::now();
-                for (size_t i = 0; i < size * testCount; i+=4) { // EXPERIMENT
-                    k += array[i % static_cast<uint64_t>(size)];
-                }
-                auto end = std::chrono::high_resolution_clock::now();
-
-                time.push_back(
-                        static_cast<double>\
-                        (std::chrono::nanoseconds(end - start).count())/1000);
+                time.push_back(straightExperiment(size));
             }
                 break;
             case Order::Back: {
-                long double k = 0;
-
-                for (size_t i = 0; i < size; ++i) { // WARMING
-                    k += array[i];
-                }
-                k = 0;
-
-                auto start = std::chrono::high_resolution_clock::now();
-                for (size_t i = size * testCount; i > 0; i-=4) { // EXPERIMENT
-                    k += array[i % static_cast<uint64_t>(size)];
-                }
-                auto end = std::chrono::high_resolution_clock::now();
-
-                time.push_back(
-                        static_cast<double>\
-                        (std::chrono::nanoseconds(end - start).count())/1000);
+                time.push_back(backExperiment(size));
             } break;
             case Order::Random: {
-                long double k = 0;
-
-                for (size_t i = 0; i < size; ++i) { // WARMING
-                    k += array[i];
-                }
-                k = 0;
-
-                auto start = std::chrono::high_resolution_clock::now();
-                std::set<size_t> used;
-                size_t l;
-                for (size_t i = 0; i < size*testCount; i+=4) {
-                    l = random() % static_cast<uint64_t>(size);
-
-                    while (used.find(j) != used.end()) {
-                        l = random() % static_cast<uint64_t>(size);
-                    }
-                    k += array[l % static_cast<uint64_t>(size)];
-                }
-
-                auto end = std::chrono::high_resolution_clock::now();
-
-                time.push_back(
-                        static_cast<double>\
-                        (std::chrono::nanoseconds(end - start).count())/1000);
+                time.push_back(randomExperiment(size));
             }
                 break;
         }
     }
-    delete[] array;
 }
 
 
