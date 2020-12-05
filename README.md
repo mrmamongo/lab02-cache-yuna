@@ -270,5 +270,5 @@ investigation:
 
 График с результатами исследований:
 
-![](WvQfvlFuVsc.jpg)
+![](lab02.jpg)
 
