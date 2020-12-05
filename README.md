@@ -7,9 +7,6 @@
 |--------|--------|
 | Travis |[![Build Status](https://travis-ci.com/mrmamongo/Lab02-cache-yuna.svg?branch=Travis)](https://travis-ci.com/github/mrmamongo/lab02-cache-yuna)|
 
-Таблица диаграмма полученных значений:
-
-![](WvQfvlFuVsc.jpg)
 
 
 
@@ -168,4 +165,128 @@ investigation:                                       |  investigation:
 ...                                                  |  ...
 ```
 
-⚠️ В отчет также необходимо добавить общий график с результатами всех исследований. ⚠️
+```yaml
+investigation:
+ travel_order: straight
+  experiments:
+  - experiment:
+	 number: 1
+	  input_data:
+		buffer_size: "0.1875 MB"
+		results:
+		 experiment_duration: "2.27641e+06 ns"
+  - experiment:
+	 number: 2
+	  input_data:
+		buffer_size: "1 MB"
+		results:
+		 experiment_duration: "1.30921e+06 ns"
+  - experiment:
+	 number: 3
+	  input_data:
+		buffer_size: "2 MB"
+		results:
+		 experiment_duration: "1.24482e+06 ns"
+  - experiment:
+	 number: 4
+	  input_data:
+		buffer_size: "4 MB"
+		results:
+		 experiment_duration: "1.19292e+06 ns"
+  - experiment:
+	 number: 5
+	  input_data:
+		buffer_size: "8 MB"
+		results:
+		 experiment_duration: "1.18936e+06 ns"
+  - experiment:
+	 number: 6
+	  input_data:
+		buffer_size: "13.5 MB"
+		results:
+		 experiment_duration: "1.19776e+06 ns"
+investigation:
+ travel_order: back
+  experiments:
+  - experiment:
+	 number: 1
+	  input_data:
+		buffer_size: "0.1875 MB"
+		results:
+		 experiment_duration: "1.12905e+06 ns"
+  - experiment:
+	 number: 2
+	  input_data:
+		buffer_size: "1 MB"
+		results:
+		 experiment_duration: "1.14635e+06 ns"
+  - experiment:
+	 number: 3
+	  input_data:
+		buffer_size: "2 MB"
+		results:
+		 experiment_duration: "3.68168e+06 ns"
+  - experiment:
+	 number: 4
+	  input_data:
+		buffer_size: "4 MB"
+		results:
+		 experiment_duration: "2.01652e+06 ns"
+  - experiment:
+	 number: 5
+	  input_data:
+		buffer_size: "8 MB"
+		results:
+		 experiment_duration: "1.48241e+06 ns"
+  - experiment:
+	 number: 6
+	  input_data:
+		buffer_size: "13.5 MB"
+		results:
+		 experiment_duration: "1.50505e+06 ns"
+investigation:
+ travel_order: random
+  experiments:
+  - experiment:
+	 number: 1
+	  input_data:
+		buffer_size: "0.1875 MB"
+		results:
+		 experiment_duration: "2.28678e+07 ns"
+  - experiment:
+	 number: 2
+	  input_data:
+		buffer_size: "1 MB"
+		results:
+		 experiment_duration: "1.7927e+07 ns"
+  - experiment:
+	 number: 3
+	  input_data:
+		buffer_size: "2 MB"
+		results:
+		 experiment_duration: "1.82734e+07 ns"
+  - experiment:
+	 number: 4
+	  input_data:
+		buffer_size: "4 MB"
+		results:
+		 experiment_duration: "1.76782e+07 ns"
+  - experiment:
+	 number: 5
+	  input_data:
+		buffer_size: "8 MB"
+		results:
+		 experiment_duration: "1.77135e+07 ns"
+  - experiment:
+	 number: 6
+	  input_data:
+		buffer_size: "13.5 MB"
+		results:
+		 experiment_duration: "1.77302e+07 ns"
+
+```
+
+График с результатами исследований:
+
+![](WvQfvlFuVsc.jpg)
+
