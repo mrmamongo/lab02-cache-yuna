@@ -266,8 +266,6 @@ investigation:
         results:
          experiment_duration: "1.66863e+07 ns"
 
-Process finished with exit code 0
-
 ```
 
 График с результатами исследований:
