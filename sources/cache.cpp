@@ -89,7 +89,6 @@ Experiment::Experiment(Experiment::Order ord, const size_t& sizes) {
 }
 
 
-
 void Cache::print(std::ostream& os, Experiment experiment) const {
     os << "investigation:" << endl
     << " travel_order: " << string(experiment) << endl
@@ -98,8 +97,8 @@ void Cache::print(std::ostream& os, Experiment experiment) const {
         os << "  - experiment:" << endl
         << "\t number: " << i+1 << endl
         << "\t  input_data:" << endl
-        << "\t\tbuffer_size: \""
-        << experimentSizes[i]/(1024*1024) << " MB\"\n"
+        //<< "\t\tbuffer_size: \""
+        //<< experimentSizes[i]/(1024*1024) << " MB\"\n"
         << "\t\tresults:\n\t\t experiment_duration: \""
         << experiment.time[i] << " ns\"\n";
     }
