@@ -30,7 +30,7 @@ double straightExperiment(size_t size) {
     static_cast<double>\
     (std::chrono::nanoseconds(end - start).count())/1000;
 }
-double backExperiment (size_t size) {
+double backExperiment(size_t size) {
     auto array = generateArray(size);
     long double k = 0;
 
@@ -49,7 +49,7 @@ double backExperiment (size_t size) {
     static_cast<double>\
     (std::chrono::nanoseconds(end - start).count())/1000;
 }
-double randomExperiment (size_t size) {
+double randomExperiment(size_t size) {
     auto array = generateArray(size);
     long double k = 0;
 
