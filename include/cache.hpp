@@ -14,6 +14,8 @@ using std::cout;
 using std::endl;
 using std::string;
 
+static const size_t offset = 4;
+static const int MBinB = 1024*1024;
 static const int testCount = 1000;
 static const std::vector<double> cacheSizes {0.375, 1.5, 9};
 
