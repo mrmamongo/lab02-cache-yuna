@@ -173,32 +173,32 @@ investigation:
      number: 1
       input_data:
         results:
-         experiment_duration: "3.94951e+06 ns"
+         experiment_duration: "2.12863e+06 ns"
   - experiment:
      number: 2
       input_data:
         results:
-         experiment_duration: "3.97326e+06 ns"
+         experiment_duration: "1.24879e+06 ns"
   - experiment:
      number: 3
       input_data:
         results:
-         experiment_duration: "2.89917e+06 ns"
+         experiment_duration: "1.23461e+06 ns"
   - experiment:
      number: 4
       input_data:
         results:
-         experiment_duration: "2.42375e+06 ns"
+         experiment_duration: "1.2828e+06 ns"
   - experiment:
      number: 5
       input_data:
         results:
-         experiment_duration: "1.35517e+06 ns"
+         experiment_duration: "1.23538e+06 ns"
   - experiment:
      number: 6
       input_data:
         results:
-         experiment_duration: "1.43942e+06 ns"
+         experiment_duration: "1.30313e+06 ns"
 investigation:
  travel_order: back
   experiments:
@@ -206,32 +206,32 @@ investigation:
      number: 1
       input_data:
         results:
-         experiment_duration: "1.41243e+06 ns"
+         experiment_duration: "1.25288e+06 ns"
   - experiment:
      number: 2
       input_data:
         results:
-         experiment_duration: "1.46911e+06 ns"
+         experiment_duration: "1.26319e+06 ns"
   - experiment:
      number: 3
       input_data:
         results:
-         experiment_duration: "1.41975e+06 ns"
+         experiment_duration: "1.22545e+06 ns"
   - experiment:
      number: 4
       input_data:
         results:
-         experiment_duration: "1.41199e+06 ns"
+         experiment_duration: "1.23922e+06 ns"
   - experiment:
      number: 5
       input_data:
         results:
-         experiment_duration: "1.33687e+06 ns"
+         experiment_duration: "1.24903e+06 ns"
   - experiment:
      number: 6
       input_data:
         results:
-         experiment_duration: "1.39663e+06 ns"
+         experiment_duration: "1.23344e+06 ns"
 investigation:
  travel_order: random
   experiments:
@@ -239,32 +239,32 @@ investigation:
      number: 1
       input_data:
         results:
-         experiment_duration: "1.61102e+07 ns"
+         experiment_duration: "1.09333e+07 ns"
   - experiment:
      number: 2
       input_data:
         results:
-         experiment_duration: "1.59258e+07 ns"
+         experiment_duration: "1.01871e+07 ns"
   - experiment:
      number: 3
       input_data:
         results:
-         experiment_duration: "1.60875e+07 ns"
+         experiment_duration: "9.86332e+06 ns"
   - experiment:
      number: 4
       input_data:
         results:
-         experiment_duration: "1.61828e+07 ns"
+         experiment_duration: "9.78374e+06 ns"
   - experiment:
      number: 5
       input_data:
         results:
-         experiment_duration: "1.59539e+07 ns"
+         experiment_duration: "9.86815e+06 ns"
   - experiment:
      number: 6
       input_data:
         results:
-         experiment_duration: "3.38623e+07 ns"
+         experiment_duration: "9.96487e+06 ns"
 ```
 
 График с результатами исследований:
